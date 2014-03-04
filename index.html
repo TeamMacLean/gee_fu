@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gee fu by wookoouk</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Gee fu</h1>
+        <h2>An extensible Ruby on Rails web-service application and database for visualising HTGS data</h2>
+        <a href="https://github.com/wookoouk/gee_fu" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a name="what-is-gee-fu" class="anchor" href="#what-is-gee-fu"><span class="octicon octicon-link"></span></a>What is Gee Fu?</h2>
+
+<p>Gee Fu is an application that holds Gene Feature data. It has been designed with the needs of researchers wanting to keep, share and annotate sequence and feature data.
+Gee Fu is a Ruby on Rails based RESTful web-service application that stores and serves sequence assembly and genome feature data on request. </p>
+
+<p>GeeFu can be used as a base that can be easily extended into fuller customised web-applications using the powerful Rails framework.</p>
+
+<p>Gee Fu is ideally suited to serving large amounts of data such as those from high-throughput sequencing experiments via bio-samtools and BAM files. </p>
+
+<p>Gee Fu is capable of receiving and handling requests from AnnoJ , a web service based viewing engine for genomic data. It can return JSON data which AnnoJ is able to render. We anticipate being able to serve up data in formats suitable for different applications as development progresses and we become aware of other rendering engines and web services that request data. </p>
+
+<h2>
+<a name="quick-install" class="anchor" href="#quick-install"><span class="octicon octicon-link"></span></a>Quick Install</h2>
+
+<ul>
+<li>Install Docker.</li>
+<li>
+</ul><h2>
+<a name="setting-up-gee-fu" class="anchor" href="#setting-up-gee-fu"><span class="octicon octicon-link"></span></a>Setting up Gee Fu</h2>
+
+<h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies:</h3>
+
+<p><a href="doc/ubuntu.md">Ubuntu/Debian</a></p>
+
+<p><a href="doc/osx.md">Mac OSX</a></p>
+
+<p>Windows (Coming Soon!)</p>
+
+<h3>
+<a name="get-geefu" class="anchor" href="#get-geefu"><span class="octicon octicon-link"></span></a>Get GeeFu:</h3>
+
+<ul>
+<li>Clone the GeeFU repo: <code>git clone git://github.com/wookoouk/gee_fu.git geefu</code>
+</li>
+<li>Go into geefu folder: <code>cd geefu</code>
+</li>
+<li>Accept the .rvmrc as trusted</li>
+</ul><h3>
+<a name="configure-geefu" class="anchor" href="#configure-geefu"><span class="octicon octicon-link"></span></a>Configure GeeFu:</h3>
+
+<ul>
+<li>Install bundler
+<code>gem install bundler</code>
+</li>
+<li>Set up the repo
+<code>bundle install</code>
+</li>
+<li>Sign up for a <a href="http://mandrill.com/">Mandrill</a> account and grab an API key</li>
+<li>Create a .env file in the root folder with:</li>
+</ul><pre><code>EMAIL_SENDER=My Name &lt;me@example.com&gt;
+MANDRILL_USERNAME=me@example.com
+MANDRILL_APIKEY=[insert API key]
+</code></pre>
+
+<ul>
+<li>Update 'config.action_mailer.default_url_options' inside 'config/environments/development.rb' to reflect your sites base URL.</li>
+<li>Create a Postgres user called gee_fu with no password</li>
+<li>Change the attributes of Postgres user gee_fu to allow database creation <code>ALTER USER gee_fu CREATEDB;</code>
+</li>
+<li>Run <code>rake db:setup</code>
+</li>
+<li>Follow the instructions at README_FOR_DATA.mdown</li>
+<li>Start the gee-fu server with <code>foreman start</code>
+</li>
+<li>Visit http://localhost:5000</li>
+<li>Once you've signed up as the first user use <code>rake admin:set email=me@example.com</code> to set your account as an admin to be able add Organisms</li>
+</ul><h3>
+<a name="start-geefu" class="anchor" href="#start-geefu"><span class="octicon octicon-link"></span></a>Start GeeFu</h3>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/wookoouk/gee_fu/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/wookoouk/gee_fu/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/wookoouk/gee_fu"></a> is maintained by <a href="https://github.com/wookoouk">wookoouk</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
