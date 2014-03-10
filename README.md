@@ -22,13 +22,13 @@ YellowRust (Available Soon)
 * Build the container: 
   `docker build .`
 * Run the image: 
-  `docker -t geefu /opt/geefu/start`
+  `docker -t geefu /opt/geefu/start` //TODO
 
 ## Full Install
 
 ### Hosting
 
-You can install GeeFu almost anywhere, on a local machine, VM or in then cloud, below are a few reccomendations:
+You can install GeeFu almost anywhere, on a local machine, VM or in then cloud, below are a few recommendations:
 * [Linode](https://www.linode.com/) - Cheep($20 p/m) hosting, very easy to set up.
 * [AWS](http://aws.amazon.com/) - Cheep (free option available), not so easy to set up.
 * [Heroku](https://www.heroku.com/) - Cheep (free option available), [easy to setup](heroku.md)
