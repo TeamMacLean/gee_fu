@@ -34,7 +34,7 @@ You can install GeeFu almost anywhere, on a local machine, VM or in then cloud, 
 * [Heroku](https://www.heroku.com/) - Cheep (free option available), [easy to setup](heroku.md)
 * [VirtualBox](https://www.virtualbox.org/) - Run the site from your local machine, for testing.
 
-### Dependencies:
+### Dependencies
 
 [Ubuntu/Debian](doc/ubuntu.md)
 
@@ -42,13 +42,13 @@ You can install GeeFu almost anywhere, on a local machine, VM or in then cloud, 
 
 Windows (Coming Soon!)
 
-### Get GeeFu:
+### Get GeeFu
 
 * Clone the GeeFU repo: `git clone git://github.com/wookoouk/gee_fu.git geefu`
 * Go into geefu folder: `cd geefu`
 * Accept the .rvmrc as trusted
 
-### Configure GeeFu:
+### Configure GeeFu
 
 * Install bundler
   `gem install bundler`
