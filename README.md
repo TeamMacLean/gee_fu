@@ -87,7 +87,12 @@ foreman start
 ##### With Passenger
 [Install Passenger](http://www.modrails.com/documentation/Users%20guide%20Apache.html#installation)
 
-[Link to Apache config]()
+The following is added to the Apache2/Httpd conf to route to WebApollo
+```
+ProxyRequests Off
+ProxyPass /WebApollo http://localhost:8080/WebApollo
+ProxyPassReverse /WebApollo http://localhost:8080/WebApollo
+```
 
 
 Ubuntu/Debian: 
