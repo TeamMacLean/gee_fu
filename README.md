@@ -61,7 +61,8 @@ MANDRILL_APIKEY=[insert API key]
 
 * Update 'config.action_mailer.default_url_options' inside 'config/environments/development.rb' to reflect your sites base URL.
 * Create a Postgres user called gee_fu with no password
-* Change the attributes of Postgres user gee_fu to allow database creation `ALTER USER gee_fu CREATEDB;`
+* Change the attributes of Postgres user gee_fu to allow database creation
+  `ALTER USER gee_fu CREATEDB;`
 * Run `rake db:setup`
 * Follow the instructions at README_FOR_DATA.mdown
 * Start the gee-fu server with `foreman start`
