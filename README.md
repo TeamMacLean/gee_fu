@@ -17,8 +17,12 @@ YellowRust (Available Soon)
 
 ## Demo Install (not advised for production)
 * Install [Docker](https://www.docker.io/gettingstarted/#h_installation)
-* Get the Dockerfile TODO
-* Run the image TODO
+* Get the Dockerfile: 
+  `wget/curl https://raw.github.com/wookoouk/gee_fu/master/Dockerfile`
+* Build the container: 
+  `docker build .`
+* Run the image: 
+  `docker -t geefu /opt/geefu/start`
 
 ## Full Install
 
