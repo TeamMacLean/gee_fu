@@ -18,11 +18,11 @@ YellowRust (Available Soon)
 ## Demo Install (not advised for production)
 * Install [Docker](https://www.docker.io/gettingstarted/#h_installation)
 * Get the Dockerfile: 
-  `wget/curl https://raw.github.com/wookoouk/gee_fu/master/Dockerfile`
+  `wget(or)curl https://raw.github.com/wookoouk/gee_fu/master/Dockerfile`
 * Build the container: 
   `docker build .`
 * Run the image: 
-  `docker -t geefu /opt/geefu/start` //TODO
+  `docker -t geefu /opt/geefu/start`
 
 ## Full Install
 
@@ -57,7 +57,7 @@ Windows (Coming Soon!)
 * Sign up for a [Mandrill](http://mandrill.com/) account and grab an API key
 * Create a .env file in the root folder with:
 
-```shell
+```
 EMAIL_SENDER=My Name <me@example.com>
 MANDRILL_USERNAME=me@example.com
 MANDRILL_APIKEY=[insert API key]
@@ -76,12 +76,12 @@ MANDRILL_APIKEY=[insert API key]
 ### Start GeeFu
 
 ##### With Rake
-```shell
+```
 bundle exec rails server
 ```
 
 ##### With Foreman
-```shell
+```
 foreman start
 ```
 ##### With Passenger
@@ -96,16 +96,16 @@ ProxyPassReverse /WebApollo http://localhost:8080/WebApollo
 
 
 Ubuntu/Debian: 
-```shell
+```
 sudo /etc/init.d/httpd/restart
 ```
 
 Centos: 
-```shell
+```
 sudo /etc/init.d/apach2/restart
 ```
 
 OSX: 
-```shell
+```
 sudo /usr/sbin/apachectl restart
 ```
