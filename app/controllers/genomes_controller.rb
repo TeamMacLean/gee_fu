@@ -24,7 +24,7 @@ class GenomesController < ApplicationController
   def index #regular web request method
     @genomes = Genome.all
     @genomes.each do |gen|
-      gen.meta ? gen.meta = JSON::parse("#{gen.meta}") : nil
+      # gen.meta ? gen.meta = JSON::parse("#{gen.meta}") : nil
     end
     respond @genomes
   end
@@ -35,7 +35,7 @@ class GenomesController < ApplicationController
   def show
     if Genome.exists?(params[:id])
      @genome = Genome.find(params[:id])
-     @genome.meta = @genome.meta_as_data_structure     
+     # @genome.meta = @genome.meta_as_data_structure     
      respond @genome
     else
       respond :false
