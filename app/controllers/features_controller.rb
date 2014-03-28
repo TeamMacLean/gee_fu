@@ -466,10 +466,10 @@ end
     if !@featuretype.nil?
       logger.error "-------------------------------- feature type = #{params[:featutype]}"
       @features = Feature.where(experiment_id: @eid, feature: @featuretype, seqid: @part)
-      logger.error "------------------------------------ found #{@features.length} features"
+      logger.error "-------------------------------- found #{@features.length} features"
     else
       @features = Feature.where(experiment_id: @eid, feature: ["mRNA", "five_prime_UTR", "exon", "intron", "three_prime_UTR"], seqid: @part)
-      logger.error "------------------------------------ found #{@features.length} features"
+      logger.error "-------------------------------- found #{@features.length} features"
     end
     render :template => 'features/dalliance_get.xml.builder', :layout => false
   end
@@ -508,82 +508,84 @@ end
     render :json => @response, :layout => false
   end
 
-  #AnnoJ request method, not normally called directly used in config.yml and config.js. Gets reference track that is saved as experiment at id
-  # => use /features/chromosome/id
-  def chromosome
 
-    #a method for returning chromosome sequence as if it were a read to trick annoj into showing a reference sequence...
-    if request.get?
-      ##sort out the params from annoj's get
-      annoj_params = {}
-      request.url.split(/&/).each do |pair|
-        k, v = pair.split(/=/)
-        annoj_params[k] = v
-      end #CGI.parse(URI.parse(request.url).query)
-      annoj_params.each_pair { |k, v| annoj_params[k] = v.to_s }
-      case annoj_params['action']
-      when "syndicate"
-        @response = syndicate(params[:id])
-      when "describe"
-        @response = [] ##to be done... 
-      end
-      render :json => @response, :layout => false
-    elsif request.post?
-      annoj_params = {}
-      request.raw_post.split(/&/).each do |pair|
-        k, v = pair.split(/=/)
-        annoj_params[k] = v
-      end
-      annoj_params.each_pair { |k, v| annoj_params[k] = v.to_s }
-      #now do the specific stuff based on the annoj action...
-      if annoj_params['action'] == 'range'
-        #remember params[:id] is genome id and annoj_params['assembly'] is the chromosome
-        sequence = Reference.first(:conditions => {:genome_id => params[:id], :name => annoj_params['assembly']}).sequence.sequence
-        subseq = sequence[annoj_params['left'].to_i - 3..annoj_params['right'].to_i - 3]
-        f = LightFeature.new(
-          :group => '.',
-          :feature => 'chromosome',
-          :source => '.',
-          :start => annoj_params['left'].to_i,
-          :end => annoj_params['right'].to_i,
-          :strand => '+',
-          :phase => '.',
-          :seqid => annoj_params['assembly'],
-          :score => '.',
-          :experiment_id => nil,
-          :gff_id => nil,
-          :sequence => "#{subseq}",
-          :quality => nil,
-          :reference_id => nil
-          )
-zoom_factor = annoj_params['bases'].to_i / annoj_params['pixels'].to_i
-response = new_response
-features = [f]
-        #@response = #range(annoj_params['assembly'], annoj_params['left'], annoj_params['right'], params[:id], annoj_params['bases'], annoj_params['pixels'])
-        if zoom_factor >= 10
-          hist_data = get_histogram(features)
-          response[:data] = {}
-          response[:data][:read] = hist_data
+  # TODO Should not be needed any more
+#   #AnnoJ request method, not normally called directly used in config.yml and config.js. Gets reference track that is saved as experiment at id
+#   # => use /features/chromosome/id
+#   def chromosome
 
-        elsif zoom_factor < 10 and zoom_factor > 0.1
-          box_data = get_boxes(features)
-          box_data[:watson][0][0] = f.seqid
-          response[:data] = {}
-          response[:data][:read] = box_data
-        else
-          read_data = get_reads(features)
-          read_data[:watson][0][0] = f.seqid
-          response[:data] = {}
-          response[:data][:read] = read_data
-        end
-        @response = response
+#     #a method for returning chromosome sequence as if it were a read to trick annoj into showing a reference sequence...
+#     if request.get?
+#       ##sort out the params from annoj's get
+#       annoj_params = {}
+#       request.url.split(/&/).each do |pair|
+#         k, v = pair.split(/=/)
+#         annoj_params[k] = v
+#       end #CGI.parse(URI.parse(request.url).query)
+#       annoj_params.each_pair { |k, v| annoj_params[k] = v.to_s }
+#       case annoj_params['action']
+#       when "syndicate"
+#         @response = syndicate(params[:id])
+#       when "describe"
+#         @response = [] ##to be done... 
+#       end
+#       render :json => @response, :layout => false
+#     elsif request.post?
+#       annoj_params = {}
+#       request.raw_post.split(/&/).each do |pair|
+#         k, v = pair.split(/=/)
+#         annoj_params[k] = v
+#       end
+#       annoj_params.each_pair { |k, v| annoj_params[k] = v.to_s }
+#       #now do the specific stuff based on the annoj action...
+#       if annoj_params['action'] == 'range'
+#         #remember params[:id] is genome id and annoj_params['assembly'] is the chromosome
+#         sequence = Reference.first(:conditions => {:genome_id => params[:id], :name => annoj_params['assembly']}).sequence.sequence
+#         subseq = sequence[annoj_params['left'].to_i - 3..annoj_params['right'].to_i - 3]
+#         f = LightFeature.new(
+#           :group => '.',
+#           :feature => 'chromosome',
+#           :source => '.',
+#           :start => annoj_params['left'].to_i,
+#           :end => annoj_params['right'].to_i,
+#           :strand => '+',
+#           :phase => '.',
+#           :seqid => annoj_params['assembly'],
+#           :score => '.',
+#           :experiment_id => nil,
+#           :gff_id => nil,
+#           :sequence => "#{subseq}",
+#           :quality => nil,
+#           :reference_id => nil
+#           )
+# zoom_factor = annoj_params['bases'].to_i / annoj_params['pixels'].to_i
+# response = new_response
+# features = [f]
+#         #@response = #range(annoj_params['assembly'], annoj_params['left'], annoj_params['right'], params[:id], annoj_params['bases'], annoj_params['pixels'])
+#         if zoom_factor >= 10
+#           hist_data = get_histogram(features)
+#           response[:data] = {}
+#           response[:data][:read] = hist_data
 
-      elsif annoj_params["action"] == "lookup"
-        @response = [] #to be done also #lookup(annoj_params["query"], params[:id])
-      end
-      render :json => @response, :layout => false
-    end
-  end
+#         elsif zoom_factor < 10 and zoom_factor > 0.1
+#           box_data = get_boxes(features)
+#           box_data[:watson][0][0] = f.seqid
+#           response[:data] = {}
+#           response[:data][:read] = box_data
+#         else
+#           read_data = get_reads(features)
+#           read_data[:watson][0][0] = f.seqid
+#           response[:data] = {}
+#           response[:data][:read] = read_data
+#         end
+#         @response = response
+
+#       elsif annoj_params["action"] == "lookup"
+#         @response = [] #to be done also #lookup(annoj_params["query"], params[:id])
+#       end
+#       render :json => @response, :layout => false
+#     end
+#   end
 
   #AnnoJ request method, returns metadata on a track required by AnnoJ
   def syndicate(id)
