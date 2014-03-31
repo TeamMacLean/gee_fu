@@ -135,6 +135,10 @@ margin-bottom: 50px;
 text-align: center;
 }
 
+.part p, .part .p {
+text-align: center;
+}
+
 .part img, .part .img {
 display: block;
 margin-left: auto;
