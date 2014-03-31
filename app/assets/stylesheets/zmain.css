@@ -122,6 +122,13 @@ height: 60px;
 background-color: #f5f5f5;
 }
 
+.container .text-muted {
+margin: 20px 0;
+}
+.text-muted {
+color: #999;
+}
+
 /* TABLES HACK */
 @media only screen and (max-width: 979px) {
     /* Force table to not be like tables anymore */
