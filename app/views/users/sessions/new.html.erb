@@ -1,7 +1,7 @@
 <div class="border-form-div">
   <h2>Sign in</h2>
   <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <%= f.input :email, :autofocus => true, :placeholder => 'Email address', label: false, :required => true %>
+    <%= f.input :email, :autofocus => true, :placeholder => 'Email address', label: false, :required => true, :class => 'form-control' %>
     <%= f.input :password, :placeholder => 'Password', label: false, :required => true %>
     <p>
       <button type="submit" name="commit" class='btn btn-primary'>
