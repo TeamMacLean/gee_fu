@@ -14,7 +14,7 @@
 <%= text_field_tag :start, nil, placeholder: "One or higher" %>
 <%= text_field_tag :end, nil, placeholder: "Higher than start value" %>
 <br/>
-<%= f.submit "Get features", :class => 'btn btn-action' %>
+<%= f.submit "Get features", :class => 'btn btm-default' %>
 <% end %>
 
 <legend>Get features by annotation</legend>
@@ -22,7 +22,7 @@
     <%= form_for(Feature.new, url: feature_search_by_attribute_path, html: {class: "form-search"}) do |f| %>
     <div class="input-append">
         <%= f.text_field :group, label: false, placeholder: "Enter string to find", class: "search-query" %>
-        <%= f.button "Search", :class => 'btn' %>
+        <%= f.button "Search", :class => 'btn btm-default' %>
     </div>
     <% end %>
 </div>
@@ -32,7 +32,7 @@
     <%= form_for(Feature.new, url: feature_search_by_id_path, html: {class: "form-search"}) do |f| %>
     <div class="input-append">
         <%= f.text_field :id, placeholder: "Database ID", label: false, class: "search-query" %>
-        <%= f.button "Search", :class => 'btn' %>
+        <%= f.button "Search", :class => 'btn btm-default' %>
     </div>
     <% end %>
 </div>
@@ -46,7 +46,7 @@
     <br>
     <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" autocomplete="off" id="typeahead" placeholder="Enter reference name" name="build_name">
     <br>
-    <%= f.submit "Get features", :class => 'btn btn-action' %>
+    <%= f.submit "Get features", :class => 'btn btm-default' %>
 
     <% end %>
 </div>
