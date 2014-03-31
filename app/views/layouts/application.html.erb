@@ -17,12 +17,14 @@
 
     <!--flash goes here -->
     <%= render partial: "layouts/navbar" %>
-    <div id="page" class="container">
-    <div class="">
-        <%= yield %>
-    </div>
 
-</div>
+    <% if current_page?('/') %>
+        <div id="page">
+    <% else %>
+        <div id="page" class="container">
+    <% end %>
+    <%= yield %>
+        </div>
 
 <div id="footer">
     <div class="container">
