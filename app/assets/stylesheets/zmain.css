@@ -126,6 +126,11 @@ margin-top: 50px;
 margin-bottom: 50px;
 }
 
+.part-grey {
+    background: #e0e0e0;
+    /*color: #ecf0f1;*/
+}
+
 .part h1, .part .h1 {
 text-align: center;
 }
