@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -7,88 +7,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">GeeFu</a>
+          <a class="navbar-brand" href="#">GeeFu</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="<%= organisms_path %>">Organisms</a>
-            </li>
+            <li><a href="<%= organisms_path %>">Organisms</a></li>
             <% if has_organisms? %>
-                <li>
-                    <a href="<%= genomes_path %>">Genome Builds</a>
+                <li><a href="<%= genomes_path %>">Genome Builds</a></li>
+                <li><a href="<%= experiments_path %>">Annotation Experiments</a></li>
+                <li><a href="<%= features_path %>">Features</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/sequenceserver">Blast</a></li>
+                    <li><a href="/webapollo">WebApollo</a></li>
+                    <li><a href="/wiki">Wiki</a></li>
+                  </ul>
                 </li>
-                <li>
-                    <a href="<%= experiments_path %>">Annotation Experiments</a>
-                </li>
-                <li>
-                    <a href="<%= features_path %>">Features</a>
-                </li>
-
-<li class="dropdown">
-              <a href="<%= features_path %>" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="/webapollo" target="_blank">WebApollo - Chalara</a></li>
-                <li><a href="/webapollo" target="_blank">WebApollo - Chalara</a></li>
-                <li><a href="/webapollo2" target="_blank">WebApollo - Ash</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-
-
-                <li>
-                    <a href="<%= features_path %>">Tools</a>
-                        <ul>
-                            <li>
-                                <a href="/sequenceserver" target="_blank">SequenceServer</a>
-                            </li>
-                            <li>
-                                <a href="/webapollo" target="_blank">WebApollo - Chalara</a>
-                            </li>
-                            <li>
-                                <a href="/wiki" target="_blank">Wiki</a>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                <% if user_signed_in? %>
-                    <li>
-                        <a href="#">
-                            <i class="icon-user icon-white"></i>
-                            Signed In
-                        </a>
-                        
-                        <ul>
-                            <% if current_user.admin? %>
-                                <li>
-                                    <a href="/users/admin"><i class="icon-wrench icon-white"></i> Admin</a>
-                                </li>
-                            <% end %>
-                            <li>
-                                <a href="<%= edit_user_registration_path %>"><i class="icon-wrench icon-white"></i> My Account</a>
-                            </li>
-                            <li>
-                                <a href="<%= destroy_user_session_path %>">Sign Out</a>
-                            </li>
-                        </ul>
-                    </li>
+            <% end %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+                <li><a href="../navbar/">Default</a></li>
+                <li class="active"><a href="./">Static top</a></li>
+                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
                 <% else %>
                     <li>
                         <%= link_to "Sign In", new_user_session_path, { :class=>"bold" } %>
                     </li>
                 <% end %>
-            </ul>
-                </li>
-            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
+
 
 <!-- <div class="navbar navbar-inverse nav-fixed-top" role="navigation">
     <div class="container">
