@@ -1,12 +1,13 @@
-<div class="centerit">
-    <h1>OpenAshDieBack - GeeFu</h1>
+<div class="part">
 
-    <p class="lead">Welcome to the OpenAshDieBack GeeFu site.</p>
+    <img class="img" src="/assets/img/logo-circle.png" alt="logo-image" style="width: 128px; height: 128px;">
 
-    <p class="lead">
-        You need to <%= link_to "sign in", new_user_session_path %>
-        (or <%= link_to "sign up", new_user_registration_path %>) before you can access the data.
-    </p>
+    <h1>GeeFu</h1>
+
+    <p>Gee Fu is an application that holds Gene Feature data. It has been designed with the needs of researchers wanting
+        to keep, share and annotate sequence and feature data. Gee Fu is a Ruby on Rails based RESTful web-service
+        application that stores and serves sequence assembly and genome feature data on request.</p>
+
 
     <% if false %>
         <p class="lead">
@@ -35,7 +36,5 @@
     </div>
 
 </div>
-
-<br>
 
 <%= render "pages/blerb" %>

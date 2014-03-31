@@ -123,14 +123,11 @@ filter: alpha(opacity=100);
 
 }
 
-.bluerow {
-background-color: #34495e;
-color: #fff;
-}
-
-.blackrow {
-    background-color: #2f2f2f;
-    color: #fff;
+.part {
+padding-top: 50px;
+padding-bottom: 50px;
+margin-top: 50px;
+margin-bottom: 50px;
 }
 
 .hugefont {
