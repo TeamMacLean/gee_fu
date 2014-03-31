@@ -114,6 +114,10 @@ color: #fff;
     color: #fff;
 }
 
+.hugefont {
+    font-size: 80px
+}
+
 /* TABLES HACK */
 @media only screen and (max-width: 979px) {
     /* Force table to not be like tables anymore */
