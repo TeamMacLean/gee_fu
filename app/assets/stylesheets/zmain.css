@@ -62,6 +62,10 @@ width: 1000px;
     /* background-color: #BDC3C7; */
 }
 
+.jumbotron {
+    background-color: #95A5A6;
+}
+
 .jumbotron h1 {
     padding: 12px;
     font-size: 80px;
