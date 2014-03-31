@@ -8,8 +8,8 @@ body {
     background-color: #95A5A6;
 }
 
-.container {
-    background-color: #2d2d2d;
+#page .container {
+    background-color: #fff;
 }
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
