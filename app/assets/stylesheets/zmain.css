@@ -126,6 +126,11 @@ margin-top: 50px;
 margin-bottom: 50px;
 }
 
+
+.part-blue {
+    background-color: #34ADD3;
+}
+
 .part-grey {
     background: #e0e0e0;
     /*color: #ecf0f1;*/
