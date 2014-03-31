@@ -1,40 +1,40 @@
 <div class="part">
+    <div class="container"
+        <img class="img" src="/images/logo-circle.png" alt="logo-image" style="width: 128px; height: 128px;">
 
-    <img class="img" src="/images/logo-circle.png" alt="logo-image" style="width: 128px; height: 128px;">
+        <h1>GeeFu</h1>
 
-    <h1>GeeFu</h1>
-
-    <p class="bigquote">Gee Fu is an application that holds Gene Feature data. It has been designed with the needs of researchers wanting
-        to keep, share and annotate sequence and feature data. Gee Fu is a Ruby on Rails based RESTful web-service
-        application that stores and serves sequence assembly and genome feature data on request.</p>
+        <p class="bigquote">Gee Fu is an application that holds Gene Feature data. It has been designed with the needs of researchers wanting
+            to keep, share and annotate sequence and feature data. Gee Fu is a Ruby on Rails based RESTful web-service
+            application that stores and serves sequence assembly and genome feature data on request.</p>
 
 
-    <% if false %>
-        <p class="lead">
-            Or you can
-            <%= link_to "browse", browse_path %>
-            the data that already exists.
-        </p>
-    <% end %>
-
-    <div class="row-fluid centerit">
-        <%= link_to(new_user_session_path, :class => "btn btn-primary") do %>
-            <i class="icon-user icon-white"></i>
-            Sign In
-        <% end %>
-        <%= link_to(new_user_registration_path, :class => "btn btn-success") do %>
-            <i class="icon-pencil icon-white"></i>
-            Sign up
-        <% end %>
         <% if false %>
-            <%= link_to(browse_path, :class => "btn btn-action") do %>
-                <i class="icon-search icon-white"></i>
-                Browse
-            <% end %>
+            <p class="lead">
+                Or you can
+                <%= link_to "browse", browse_path %>
+                the data that already exists.
+            </p>
         <% end %>
 
-    </div>
+        <div class="row-fluid centerit">
+            <%= link_to(new_user_session_path, :class => "btn btn-primary") do %>
+                <i class="icon-user icon-white"></i>
+                Sign In
+            <% end %>
+            <%= link_to(new_user_registration_path, :class => "btn btn-success") do %>
+                <i class="icon-pencil icon-white"></i>
+                Sign up
+            <% end %>
+            <% if false %>
+                <%= link_to(browse_path, :class => "btn btn-action") do %>
+                    <i class="icon-search icon-white"></i>
+                    Browse
+                <% end %>
+            <% end %>
 
+        </div>
+    </div>
 </div>
 
 <%= render "pages/blerb" %>
