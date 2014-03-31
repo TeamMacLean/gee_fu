@@ -28,14 +28,18 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li><a href="../navbar/">Default</a></li>
-                <li class="active"><a href="./">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                <% else %>
+                <% if current_user.admin? %>
                     <li>
-                        <%= link_to "Sign In", new_user_session_path, { :class=>"bold" } %>
+                        <a href="/users/admin"><i class="icon-wrench icon-white"></i> Admin</a>
                     </li>
                 <% end %>
+                <li>
+                    <a href="<%= edit_user_registration_path %>"><i class="icon-wrench icon-white"></i> My Account</a>
+                </li>
+                <a href="<%= destroy_user_session_path %>">Sign Out</a>
+            <% else %>
+                <a href="<%= new_user_session_path %>">Sign In</a>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
