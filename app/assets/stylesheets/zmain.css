@@ -76,24 +76,6 @@ width: 1000px;
     line-height: 1em;
 }
 
-.greybg {
-    background-color: #e6e6e6;
-}
-
-.bluebg {
-    background-color: #5A5A5A;
-    color: #fff;
-}
-
-.lightbluebg {
-    background-color: #929292;
-    color: #fff;
-}
-
-.redbg {
-    background-color: #eb7260;
-}
-
 .centerit {
     text-align: center;
 }
