@@ -1,9 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
 html {
     background-color: #95A5A6;
     height: 100%;
 }
 
 body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
     padding-top: 80px;
     background-color: #95A5A6;
 }
