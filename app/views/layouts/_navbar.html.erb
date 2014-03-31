@@ -11,7 +11,9 @@
 </div>
 <div class="navbar-collapse collapse">
   <ul class="nav navbar-nav">
+    <% if user_signed_in? %>
     <li><a href="<%= organisms_path %>">Organisms</a></li>
+    <% end %>
     <% if has_organisms? %>
     <li><a href="<%= genomes_path %>">Genome Builds</a></li>
     <li><a href="<%= experiments_path %>">Experiments</a></li>
