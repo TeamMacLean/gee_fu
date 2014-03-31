@@ -19,9 +19,30 @@ body {
     background-color: #e7e7e7;
 }
 
-/*.navbar {
-    background-color: #e7e7e7;
-}*/
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #777;
+}
+.navbar-inverse {
+    background-color: #2d2d2d;
+    padding: 10px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #2ecc71;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #2ecc71;
+}
+
 
 .well {
     background-color: #e7e7e7;
