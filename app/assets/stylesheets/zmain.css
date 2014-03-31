@@ -2,6 +2,8 @@
 html {
     background-color: #A7A7A7;
     height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -11,6 +13,7 @@ body {
     font-size: 16px;
     padding-top: 80px;
     background-color: #A7A7A7;
+    margin-bottom: 60px;
 }
 
 #page {
