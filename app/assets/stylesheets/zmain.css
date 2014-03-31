@@ -136,6 +136,11 @@ margin-left: auto;
 margin-right: auto;
 }
 
+.bigquote {
+font-size: 35px;
+font-style:italic
+}
+
 .hugefont {
     font-size: 80px
 }
