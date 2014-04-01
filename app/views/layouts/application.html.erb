@@ -4,8 +4,8 @@
     <title><%= @page_title or "OpenAshDieBack - GeeFu" %></title>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
-            <link href="//raw.github.com/jharding/typeahead.js-bootstrap.css/master/typeahead.js-bootstrap.css" rel="stylesheet" media="screen">
-<script src="//twitter.github.com/typeahead.js/releases/latest/typeahead.min.js"></script>
+    <link href="/stylesheets/typeahead.js-bootstrap.css" rel="stylesheet" media="screen">
+    <script src="/js/typeahead.bundle.js"></script>
     <%= csrf_meta_tags %>
 
     <%unless params[:badge].nil?%>
