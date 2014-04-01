@@ -4,6 +4,8 @@
     <title><%= @page_title or "OpenAshDieBack - GeeFu" %></title>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+            <link href="//raw.github.com/jharding/typeahead.js-bootstrap.css/master/typeahead.js-bootstrap.css" rel="stylesheet" media="screen">
+<script src="//twitter.github.com/typeahead.js/releases/latest/typeahead.min.js"></script>
     <%= csrf_meta_tags %>
 
     <%unless params[:badge].nil?%>
@@ -11,8 +13,7 @@
         <script src="/Credit/src/frontend/cheeves.js"></script>
         <link href="/Credit/src/frontend/cheeves.css" media="all" rel="stylesheet" type="text/css" />
 
-        <link href="//raw.github.com/jharding/typeahead.js-bootstrap.css/master/typeahead.js-bootstrap.css" rel="stylesheet" media="screen">
-<script src="//twitter.github.com/typeahead.js/releases/latest/typeahead.min.js"></script>
+
     <%end%>
 </head>
 <body>
