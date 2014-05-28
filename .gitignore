@@ -24,4 +24,5 @@ bin/
 gee_fu_data/
 
 
-# Gemfile.lock
+*.iml
+.idea
